@@ -18,7 +18,7 @@ class User(db.Model):
     images = db.relationship('Image', backref='user')
     comments = db.relationship("Comment", backref='user')
     likes = db.relationship("Like", backref='user')
-    tags = db.relationship("Comment", backref='user')
+    tags = db.relationship("Tag", backref='user')
 
 
 
@@ -33,7 +33,7 @@ class Image(db.Model):
 
     comments = db.relationship("Comment", backref='image')
     likes = db.relationship("Like", backref='image')
-    tags = db.relationship("Comment", backref='image')
+    tags = db.relationship("Tag", backref='image')
 
 class Comment(db.Model):
     __tablename__ = 'comments'
@@ -57,4 +57,3 @@ class Tag(db.Model):
     userId = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     imageId = db.Column(db.Integer, db.ForeignKey("images.id"), nullable=False)
     body = db.Column(db.VARCHAR(500))
-

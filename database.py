@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from app import app, db
-from app.models import User, Image, Comment
+from app.models import User, Image, Comment, Like, Tag
 
 with app.app_context():
     db.drop_all()
@@ -27,4 +27,22 @@ with app.app_context():
 
     for comment in comments:
         db.session.add(comment)
+        db.session.commit()
+
+    like_1 = Like(userId=1, imageId=1)
+    like_2 = Like(userId=1, imageId=1)
+
+    likes = [like_1, like_2]
+
+    for like in likes:
+        db.session.add(like)
+        db.session.commit()
+
+    tag_1 = Tag(userId=1, imageId=1, body="#Dope")
+    tag_2 = Tag(userId=1, imageId=1, body="#GoodShit")
+
+    tags = [tag_1, tag_2]
+
+    for tag in tags:
+        db.session.add(tag)
         db.session.commit()
