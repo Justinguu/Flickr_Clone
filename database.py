@@ -30,7 +30,7 @@ with app.app_context():
         db.session.commit()
 
     like_1 = Like(userId=1, imageId=1)
-    like_2 = Like(userId=1, imageId=1)
+    like_2 = Like(userId=1, imageId=2)
 
     likes = [like_1, like_2]
 
