@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from app import app, db
-from app.models import User, Image
+from app.models import User, Image, Comment
 
 with app.app_context():
     db.drop_all()
@@ -18,4 +18,13 @@ with app.app_context():
     images = [image_1, image_2]
     for image in images:
         db.session.add(image)
+        db.session.commit()
+
+    comment_1 = Comment(userId=1, imageId=1, body="Good shit")
+    comment_2 = Comment(userId=1, imageId=1, body="Love it!")
+
+    comments = [comment_1, comment_2]
+
+    for comment in comments:
+        db.session.add(comment)
         db.session.commit()
