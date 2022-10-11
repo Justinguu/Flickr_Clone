@@ -17,5 +17,5 @@ with app.app_context():
 
     images = [image_1, image_2]
     for image in images:
-        db.session.add(image_1)
+        db.session.add(image)
         db.session.commit()
