@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect
 from flask_migrate import Migrate
 from .config import Configuration
-from .models import db, User, Image, Comment
+from .models import db, User, Image, Comment, Like, Tag
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
