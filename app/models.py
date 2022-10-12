@@ -50,10 +50,10 @@ class Like(db.Model):
     userId = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     imageId = db.Column(db.Integer, db.ForeignKey("images.id"), nullable=False)
 
-class Tag(db.Model):
-    __tablename__ = 'tags'
+# class Tag(db.Model):
+#     __tablename__ = 'tags'
 
-    id = db.Column(db.Integer, primary_key=True)
-    userId = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    imageId = db.Column(db.Integer, db.ForeignKey("images.id"), nullable=False)
-    body = db.Column(db.VARCHAR(500))
+#     id = db.Column(db.Integer, primary_key=True)
+#     userId = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+#     imageId = db.Column(db.Integer, db.ForeignKey("images.id"), nullable=False)
+#     body = db.Column(db.VARCHAR(500))
