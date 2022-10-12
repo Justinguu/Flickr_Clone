@@ -15,6 +15,7 @@ python-dotenv = "*"
 sqlalchemy = "*"
 wtforms = "*"
 flask-wtf = "*"
+pytest = "*"
 
 [dev-packages]
 
