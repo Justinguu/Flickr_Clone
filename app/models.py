@@ -18,7 +18,7 @@ class User(db.Model):
     images = db.relationship('Image', backref='user')
     comments = db.relationship("Comment", backref='user')
     likes = db.relationship("Like", backref='user')
-    tags = db.relationship("Tag", backref='user')
+    # tags = db.relationship("Tag", backref='user')
 
 
 
@@ -33,7 +33,7 @@ class Image(db.Model):
 
     comments = db.relationship("Comment", backref='image')
     likes = db.relationship("Like", backref='image')
-    tags = db.relationship("Tag", backref='image')
+    # tags = db.relationship("Tag", backref='image')
 
 class Comment(db.Model):
     __tablename__ = 'comments'
