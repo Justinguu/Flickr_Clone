@@ -12,7 +12,7 @@ class User(db.Model):
     email = db.Column(db.VARCHAR(50), nullable=False, unique=True)
     username = db.Column(db.VARCHAR(50), nullable=False, unique=True)
     password = db.Column(db.VARCHAR(25), nullable=False)
-    previewImageUrl = db.Column(db.VARCHAR(500))
+    previewImageUrl = db.Column(db.String)
 
     # one-to-many; user has many images
     images = db.relationship('Image', backref='user')
@@ -29,7 +29,7 @@ class Image(db.Model):
     userId = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     title = db.Column(db.VARCHAR(100), nullable=False)
     description = db.Column(db.VARCHAR(1000))
-    previewImageUrl = db.Column(db.VARCHAR(500), nullable=False)
+    previewImageUrl = db.Column(db.String, nullable=False)
 
     comments = db.relationship("Comment", backref='image')
     likes = db.relationship("Like", backref='image')
