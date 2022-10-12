@@ -16,6 +16,7 @@ sqlalchemy = "*"
 wtforms = "*"
 flask-wtf = "*"
 pytest = "*"
+flask-login = "*"
 
 [dev-packages]
 
